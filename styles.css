@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F49E4C;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#avatar-icon {
+    display: flex;
+    justify-content: center;
+    width: 170px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: black solid 1px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    /* Shadow on bottom right */
+}
+
+#image {
+    width: 120px;
+    height: 120px;
+    padding-top: 5px;
+}
