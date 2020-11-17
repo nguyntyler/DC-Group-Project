@@ -21,6 +21,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 .button-container {
@@ -45,16 +48,45 @@ body {
 }
 
 #joke-container {
-    border: 1px solid black;
+    position: relative;
     height: 30vh;
     width: 90vw;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-align: center;
+
+    overflow: scroll;
+}
+
+#joke {
+    background-color: #f9f7e8;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border: 5px solid black;
+}
+/* #joke:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 47%;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-bottom: 12px solid #f9f7e8;
+    border-right: 7px solid transparent;
+} */
+
+#jokeText {
+    padding: 15px 3px;
+    margin: 0;
 }
 
 #thumbs {
     height: 34vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .thumb {
@@ -67,9 +99,9 @@ body {
     justify-content: center;
     width: 170px;
     height: 140px;
-    background-color: #ffff;
+    background-color: #f9f7e8;
     border-radius: 50%;
-    border: black solid 1px;
+    border: rgba(0, 0, 0, 0.623) solid 3px;
     margin: 20px 0px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   /* Shadow on bottom right */
@@ -93,4 +125,9 @@ body {
 .disable {
     cursor: not-allowed;
     pointer-events: none;
+}
+
+#initial-avatar {
+    position: absolute;
+    top: 17vh;
 }

@@ -31,6 +31,10 @@ export let removeAvatar = () => {
     let avatar = document.querySelector("#avatar-icon");
     avatar.remove();
 
+    // Remove Text
+    let joke = document.querySelector("#joke")
+    joke.remove();
+
     // Button Reenable
     let button = document.querySelector("#button")
     button.classList.toggle("disable")
