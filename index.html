@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,19 +15,21 @@
         <div class="button-container">
             <button id="button">Initiate Dad Joke</button>
         </div>
-        <div id="avatar-icon">
-            <img id="image" src="https://avatars.dicebear.com/api/male/238576394756.svg" alt="" />
+        <div class="avatar-container">
+            <div id="avatar-icon">
+                <img id="sprite" src="https://avatars.dicebear.com/api/male/238576394756.svg" alt="" />
+            </div>
         </div>
         <!-- <div id="trash-can">
             <img src="" alt="">
         </div> -->
-        <div id="joke-text">KJHDFKJHLSDJF</div>
+        <div id="joke-container"></div>
         <div id="thumbs">
             <div class="thumbs-up">
-                <img class="thumb" id="up" src="images/Image from iOS.png" alt="thumbs-up" /></img>
+                <img class="thumb disable" id="up" src="images/Image from iOS.png" alt="thumbs-up" />
             </div>
             <div class="thumbs-down">
-                <img class="thumb" id="down" src="images/iOS2.png" alt="thumbs-up" /></img>
+                <img class="thumb disable" id="down" src="images/iOS2.png" alt="thumbs-up" />
             </div>
         </div>
         <div id="trash-icon"></div>
