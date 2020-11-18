@@ -1,4 +1,5 @@
-export function thumbsuprollout() {
-  let avataricon = document.querySelector("#avatar-icon");
-  avataricon.style.animation = "roll-out-bottom";
+export function pauseshake(){
+  let thumbUp = document.querySelector("#up");
+  let thumbDown = document.querySelector("#down");
+  thumbUp.style.webkitAnimationPlayState = "paused"
 }
