@@ -1,5 +1,6 @@
-export function pauseshake(){
+export function pauseshake() {
   let thumbUp = document.querySelector("#up");
   let thumbDown = document.querySelector("#down");
-  thumbUp.style.webkitAnimationPlayState = "paused"
+  thumbUp.classList.toggle("thumb-shake-toggle");
+  thumbDown.classList.toggle("thumb-shake-toggle");
 }
