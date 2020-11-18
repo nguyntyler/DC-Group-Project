@@ -38,16 +38,6 @@ body {
   text-align: center;
 }
 
-<<<<<<< HEAD
-#avatar-icon {
-    display: flex;
-    justify-content: center;
-    width: 170px;
-    height: 140x;
-    background-color: #fff;
-    border-radius: 50%;
-    border: black solid 1px;
-=======
 #joke-text {
   height: 30vh;
 }
@@ -58,7 +48,6 @@ body {
   justify-content: center;
   align-items: center;
 }
->>>>>>> main
 
 .thumb {
   height: 170px;
