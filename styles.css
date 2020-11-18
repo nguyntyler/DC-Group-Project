@@ -425,12 +425,13 @@ body {
   margin: 20px 0px;
 }
 
-.disable {
-  cursor: not-allowed;
-  pointer-events: none;
-}
+
 
 #initial-avatar {
   position: absolute;
   top: 17vh;
+}
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
 }

@@ -13,22 +13,22 @@ button.addEventListener("click", () => {
 let removeUp = document.querySelector("#up");
 removeUp.addEventListener("click", () => {
   //   thumbsuprollout();
-  //   removeAvatar();
+  removeAvatar();
 });
 
 let removeDown = document.querySelector("#down");
 // removeDown.addEventListener("click", removeAvatar);
 
-removeUp.addEventListener("click", updateEffects);
-function updateEffects() {
-  //   document.documentElement.style.setProperty(`--transitiontime`, "1s");
-  document.documentElement.style.setProperty(`--avatarx`, "-350vw");
-  document.documentElement.style.setProperty(`--avatarslide`, "-900deg");
-}
+// removeUp.addEventListener("click", updateEffects);
+// function updateEffects() {
+//   //   document.documentElement.style.setProperty(`--transitiontime`, "1s");
+//   document.documentElement.style.setProperty(`--avatarx`, "-350vw");
+//   document.documentElement.style.setProperty(`--avatarslide`, "-900deg");
+// }
 
-removeDown.addEventListener("click", updateEffects2);
-function updateEffects2() {
-  //   document.documentElement.style.setProperty(`--transitiontime`, "1s");
-  document.documentElement.style.setProperty(`--avatary`, "200vh");
-  document.documentElement.style.setProperty(`--avatarslide`, "-360deg");
-}
+// removeDown.addEventListener("click", updateEffects2);
+// function updateEffects2() {
+//   //   document.documentElement.style.setProperty(`--transitiontime`, "1s");
+//   document.documentElement.style.setProperty(`--avatary`, "200vh");
+//   document.documentElement.style.setProperty(`--avatarslide`, "-360deg");
+// }
