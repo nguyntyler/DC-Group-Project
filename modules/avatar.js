@@ -1,3 +1,4 @@
+
 export let addAvatar = () => {
   let newAvatarDiv = document.createElement("div");
   newAvatarDiv.id = "newAvatarDiv";
@@ -15,18 +16,6 @@ export let addAvatar = () => {
   newAvatarIcon.append(newPic);
   avatarContainer.append(newAvatarDiv);
   newAvatarDiv.append(newAvatarIcon);
-
-  // Button Disable
-  let button = document.querySelector("#button");
-  button.classList.toggle("disable");
-
-  // Thumb Reenable
-  let thumbUp = document.querySelector("#up");
-  let thumbDown = document.querySelector("#down");
-  thumbUp.classList.toggle("disable");
-  thumbDown.classList.toggle("disable");
-
-  // Add thumb shake enable.
 };
 
 export let removeAvatar = () => {
@@ -35,18 +24,8 @@ export let removeAvatar = () => {
 
   // Remove Text
   let joke = document.querySelector("#joke");
-  joke.classList.toggle("fade-out");
-  //   joke.remove();
+  // joke.classList.toggle("fade-out");
+  joke.remove();
 
-  // Button Reenable
-  let button = document.querySelector("#button");
-  button.classList.toggle("disable");
 
-  // Thumb Disable
-  let thumbUp = document.querySelector("#up");
-  let thumbDown = document.querySelector("#down");
-  thumbUp.classList.toggle("disable");
-  thumbDown.classList.toggle("disable");
-
-  // Add thumb shake disable.
 };

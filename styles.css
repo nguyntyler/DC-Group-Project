@@ -2,7 +2,7 @@
   --avatarx: 0px;
   --avatary: 0px;
   --avatarslide: 0;
-  --transitiontime: 0;
+  --trashslide: 0;
 }
 
 html,
@@ -20,13 +20,7 @@ html {
 body {
   height: 100;
   margin: 0;
-  background-attachment: fixed;
-  background: rgb(244, 158, 76);
-  background: linear-gradient(
-    315deg,
-    rgba(244, 158, 76, 1) 55%,
-    rgba(234, 197, 126, 1) 100%
-  );
+  
 }
 
 .main-container {
@@ -36,6 +30,13 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  background-attachment: fixed;
+  background: rgb(244, 158, 76);
+  background: linear-gradient(
+    315deg,
+    rgba(244, 158, 76, 1) 55%,
+    rgba(234, 197, 126, 1) 100%
+  );
 }
 
 /**
@@ -100,7 +101,7 @@ body {
 #joke-container {
   position: relative;
   height: 30vh;
-  width: 90vw;
+  width: 90%;
   font-family: "Press Start 2P", cursive;
   letter-spacing: 2px;
   line-height: 1.6;
@@ -252,9 +253,19 @@ body {
 .thumb {
   height: 170px;
   padding: 10px;
-  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+}
+
+.thumbshake {
+  -webkit-animation: shake-bottom 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both;
-  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-bottom 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+
+.thumb-shake-toggle {
+  -webkit-animation-play-state: paused;
 }
 /**
  * ----------------------------------------
@@ -402,7 +413,8 @@ body {
 #newJokeDiv {
   -webkit-animation: swing-in-top-bck 0.6s
     cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-bck 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  transition: 3s;
 }
 
 .rollout {
@@ -424,6 +436,91 @@ body {
   height: 140px;
   margin: 20px 0px;
 }
+* ----------------------------------------
+ * animation slide-out-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+}
+
+
+#trash-icon {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: -20vh;
+  transform: translateY(var(--trashslide));
+  transition: 0.8s;
+  /* background-color: gray; */
+  /* bottom: 1vh; */
+  /* background-color: red; */
+  /* -webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	    animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+  /* -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+	        animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both; */
+}
+@-webkit-keyframes slide-in-bottom {
+  0% {
+   -webkit-transform: translateY(1000px);
+       transform: translateY(1000px);
+   opacity: 0;
+  }
+  100% {
+   -webkit-transform: translateY(0);
+       transform: translateY(0);
+   opacity: 1;
+  }
+ }
+ @keyframes slide-in-bottom {
+  0% {
+   -webkit-transform: translateY(1000px);
+       transform: translateY(1000px);
+   opacity: 0;
+  }
+  100% {
+   -webkit-transform: translateY(0);
+       transform: translateY(0);
+   opacity: 1;
+  }
+ }
+ 
+.trashcan {
+  z-index: 1000;
+  /* display: inline; */
+  width: 100px;
+  height: 100px;
+  /* bottom: 1px */
+  /* position: fixed; */
+  /* bottom: 1vh;*/
+  background-color: red;
+  /*-webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
+  /* -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
+	animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both; */
+}
+
 
 
 
@@ -434,4 +531,48 @@ body {
 .disable {
   cursor: not-allowed;
   pointer-events: none;
+}
+
+@media screen and (min-width: 800px){
+  #whole-screen {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+  }
+  .main-container {
+    width: 800px;
+    overflow: hidden;
+  }
+
+  #thumbs {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .thumb {
+    height: 230px;
+  }
+
+  #button {
+    height: 100px;
+    font-size: 50px;
+  }
+
+  #jokeText {
+    font-size: 25px;
+  }
+
+  .avatar-container {
+    height: 200px;
+  }
+
+  #avatar-icon {
+    height: 190px;
+    width: 210px;
+  }
+
+  #sprite {
+    width: 150px;
+  }
 }
