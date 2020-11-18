@@ -1,69 +1,156 @@
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+:root {
+  --avatarx: 0px;
+  --avatary: 0px;
+  --avatarslide: 0;
+  --transitiontime: 0;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    height: 100;
-    margin: 0;
-    background-attachment: fixed;
-    background: rgb(244,158,76);
-    background: linear-gradient(315deg, rgba(244,158,76,1) 55%, rgba(234,197,126,1) 100%);
+  height: 100;
+  margin: 0;
+  background-attachment: fixed;
+  background: rgb(244, 158, 76);
+  background: linear-gradient(
+    315deg,
+    rgba(244, 158, 76, 1) 55%,
+    rgba(234, 197, 126, 1) 100%
+  );
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
+/**
+ * ----------------------------------------
+ * animation rotate-in-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation rotate-in-center for button
+ * ----------------------------------------
+ */
+
 .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 13vh;
+  -webkit-animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 13vh;
 }
 #button {
-    font-family: 'Anton', sans-serif;
-    font-size: 40px;
-    height: 60px;
-    background-color: #bbf3c0;
-    border-radius: 5px;
-    border: 1.5px solid gray;
-    padding: 20px;
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 1px black,
+  font-family: "Anton", sans-serif;
+  font-size: 40px;
+  height: 60px;
+  background-color: #bbf3c0;
+  border-radius: 5px;
+  border: 1.5px solid gray;
+  padding: 20px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 1px black,
     0 1px 5px 2px #5c5a5a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #joke-container {
-    position: relative;
-    height: 30vh;
-    width: 90vw;
-    font-family: 'Press Start 2P', cursive;
-    letter-spacing: 2px;
-    line-height: 1.6;
-    text-align: center;
+  position: relative;
+  height: 30vh;
+  width: 90vw;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  text-align: center;
 
-    overflow: scroll;
+  overflow: scroll;
+}
+
+/**
+ * ----------------------------------------
+ * animation swing-in-top-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
 }
 
 #joke {
-    background-color: #f9f7e8;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border: 5px solid black;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 5px solid black;
 }
 /* #joke:before {
     content: "";
@@ -78,56 +165,272 @@ body {
 } */
 
 #jokeText {
-    padding: 15px 3px;
-    margin: 0;
+  background-color: #f9f7e8;
+  padding: 15px 3px;
+  margin: 0;
+}
+
+/**
+ * ----------------------------------------
+ * animation shake-bottom for thumbs >>>>>>>>> need to set timer for initiation of motion after joke
+ * ----------------------------------------
+ */
+@-webkit-keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
+@keyframes shake-bottom {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
 }
 
 #thumbs {
-    height: 34vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  height: 34vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .thumb {
-    height: 170px;
-    padding: 10px;
+  height: 170px;
+  padding: 10px;
+  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+/**
+ * ----------------------------------------
+ * animation shake keyframe close 
+ * ----------------------------------------
+ */
+
+/**
+ * ----------------------------------------
+ * animation roll-in-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes roll-in-right {
+  0% {
+    -webkit-transform: translateX(800px) rotate(540deg);
+    transform: translateX(800px) rotate(540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-right {
+  0% {
+    -webkit-transform: translateX(800px) rotate(540deg);
+    transform: translateX(800px) rotate(540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation roll-in-right keyframe close
+ * ----------------------------------------
+ */
+
+/**
+ * ----------------------------------------
+ * animation roll-out-bottom for avatar icon
+ * ----------------------------------------
+ */
+@-webkit-keyframes roll-out-bottom {
+  0% {
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(800px) rotate(540deg);
+    transform: translateY(800px) rotate(540deg);
+    opacity: 0;
+  }
+}
+@keyframes roll-out-bottom {
+  0% {
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(800px) rotate(540deg);
+    transform: translateY(800px) rotate(540deg);
+    opacity: 0;
+  }
 }
 
+/**
+ * ----------------------------------------
+ * animation roll-out-bottom keyframe close
+ * ----------------------------------------
+ */
+
+/*  NEEDS TO BE APPLIED TO ONCLICK */
+
 #avatar-icon {
-    display: flex;
-    justify-content: center;
-    width: 170px;
-    height: 140px;
-    background-color: #f9f7e8;
-    border-radius: 50%;
-    border: rgba(0, 0, 0, 0.623) solid 3px;
-    margin: 20px 0px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* -webkit-animation: roll-out-bottom 0.6s ease-in both;
+  animation: roll-out-bottom 0.6s ease-in both; */
+
+  display: flex;
+  justify-content: center;
+  width: 170px;
+  height: 140px;
+  background-color: #f9f7e8;
+  border-radius: 50%;
+  border: rgba(0, 0, 0, 0.623) solid 3px;
+  margin: 20px 0px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   /* Shadow on bottom right */
+  /* transform: translateX(var(--avatarx)); */
+  -webkit-animation: roll-in-right 0.6s ease-out both;
+  animation: roll-in-right 0.6s ease-out both;
+}
+
+#newAvatarDiv {
+  transform: translateX(var(--avatarx)) translateY(var(--avatary))
+    rotate(var(--avatarslide));
+  z-index: 100;
+  transition: 3s;
+}
+
+/**
+ * ----------------------------------------
+ * animation swing-in-top-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes swing-in-top-bck {
+  0% {
+    -webkit-transform: rotateX(70deg);
+    transform: rotateX(70deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-bck {
+  0% {
+    -webkit-transform: rotateX(70deg);
+    transform: rotateX(70deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+#newJokeDiv {
+  -webkit-animation: swing-in-top-bck 0.6s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.rollout {
+  -webkit-animation: roll-out-bottom 0.6s ease-in both;
+  animation: roll-out-bottom 0.6s ease-in both;
 }
 
 #sprite {
-    overflow: hidden;
-    width: 115px;
-    height: auto;
-    padding-top: 5px;
+  overflow: hidden;
+  width: 115px;
+  height: auto;
+  padding-top: 5px;
 }
 
 .avatar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 140px;
-    margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  margin: 20px 0px;
 }
 
 .disable {
-    cursor: not-allowed;
-    pointer-events: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 #initial-avatar {
-    position: absolute;
-    top: 17vh;
+  position: absolute;
+  top: 17vh;
 }
