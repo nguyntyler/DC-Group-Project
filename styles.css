@@ -252,9 +252,14 @@ body {
 .thumb {
   height: 170px;
   padding: 10px;
+}
+
+.thumbshake {
   -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both;
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
 }
 /**
  * ----------------------------------------

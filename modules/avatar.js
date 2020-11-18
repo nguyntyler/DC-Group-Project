@@ -1,3 +1,4 @@
+import {pauseshake} from "./animation.js"
 export let addAvatar = () => {
   let newAvatarDiv = document.createElement("div");
   newAvatarDiv.id = "newAvatarDiv";
@@ -27,6 +28,10 @@ export let addAvatar = () => {
   thumbDown.classList.toggle("disable");
 
   // Add thumb shake enable.
+  thumbUp.classList.toggle("thumbshake");
+  thumbDown.classList.toggle("thumbshake");
+  
+  setTimeout(pauseshake, 1000);
 };
 
 export let removeAvatar = () => {
@@ -49,4 +54,6 @@ export let removeAvatar = () => {
   thumbDown.classList.toggle("disable");
 
   // Add thumb shake disable.
+  thumbUp.classList.toggle("thumbshake");
+  thumbDown.classList.toggle("thumbshake");
 };
