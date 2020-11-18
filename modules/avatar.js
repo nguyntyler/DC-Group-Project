@@ -35,8 +35,8 @@ export let removeAvatar = () => {
 
   // Remove Text
   let joke = document.querySelector("#joke");
-  joke.classList.toggle("fade-out");
-  //   joke.remove();
+  // joke.classList.toggle("fade-out");
+  joke.remove();
 
   // Button Reenable
   let button = document.querySelector("#button");
