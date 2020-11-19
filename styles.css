@@ -560,6 +560,7 @@ body {
   }
 
   #initial-speech-bubble {
-    transform: translateY(20px) scale(0.4);
+    transform: translateY(140px) scale(1.2);
+    /* width: 600px; */
   }
 }
