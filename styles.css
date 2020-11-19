@@ -8,7 +8,7 @@
 
 html,
 body {
-  max-width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@ html {
 body {
   height: 100;
   margin: 0;
-  
+  position: relative;
 }
 
 .main-container {
@@ -110,7 +110,11 @@ body {
   line-height: 1.6;
   text-align: center;
 
-  overflow: scroll;
+  overflow-y: scroll;
+}
+
+#joke-container::-webkit-scrollbar {
+  display: none;
 }
 
 /**
@@ -442,19 +446,30 @@ body {
   pointer-events: none;
 }
 
+#initial-avatar-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
 
+#initial-avatar {
+  width: 400px;
+  z-index: 100;
+}
 
 
 @media screen and (min-width: 800px){
   #whole-screen {
     width: 100vw;
     background-color: rgb(46, 46, 46);
+    position: relative;
     display: flex;
     justify-content: center;
   }
   .main-container {
     width: 800px;
     overflow: hidden;
+    position: relative;
   }
 
   #thumbs {
@@ -503,5 +518,17 @@ body {
 
   #trash-icon {
     bottom: -40vh;
+  }
+
+  #initial-avatar-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #initial-avatar {
+    width: 450px;
+    z-index: 100;
   }
 }
