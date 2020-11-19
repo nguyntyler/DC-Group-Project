@@ -156,17 +156,6 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border: 5px solid black;
 }
-/* #joke:before {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    right: 47%;
-    width: 0;
-    height: 0;
-    border-left: 7px solid transparent;
-    border-bottom: 12px solid #f9f7e8;
-    border-right: 7px solid transparent;
-} */
 
 #jokeText {
   background-color: #f9f7e8;
@@ -268,15 +257,6 @@ body {
   animation-fill-mode: backwards;
 }
 
-.thumb-shake-toggle {
-  -webkit-animation-play-state: paused;
-}
-/**
- * ----------------------------------------
- * animation shake keyframe close 
- * ----------------------------------------
- */
-
 /**
  * ----------------------------------------
  * animation roll-in-right
@@ -306,11 +286,6 @@ body {
     opacity: 1;
   }
 }
-/**
- * ----------------------------------------
- * animation roll-in-right keyframe close
- * ----------------------------------------
- */
 
 /**
  * ----------------------------------------
@@ -341,14 +316,6 @@ body {
     opacity: 0;
   }
 }
-
-/**
- * ----------------------------------------
- * animation roll-out-bottom keyframe close
- * ----------------------------------------
- */
-
-/*  NEEDS TO BE APPLIED TO ONCLICK */
 
 #avatar-icon {
   display: flex;
@@ -451,7 +418,6 @@ body {
   position: relative;
   width: 240px;
   height: 100%;
-  /* background-color: firebrick; */
 }
 
 .trashcanimage {
@@ -465,10 +431,6 @@ body {
   width: 100%;
   height: auto;
 }
-
-
-
-
 
 
 #initial-avatar {
