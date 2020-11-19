@@ -469,16 +469,10 @@ body {
   z-index: 100;
 }
 
-/* #initial-speech-bubble-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-} */
-
 #initial-speech-bubble {
   transform: translateY(120px);
   z-index: 101;
-  width: 80%;
+  width: 300px;
 }
 
 #up {
