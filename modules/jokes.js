@@ -27,16 +27,7 @@ export function getJoke() {
   // Function. If sentence includes question mark or period, add 2 new lines.
 }
 
-export function createJokeBox() {
-  // Create joke
-  let joke = document.createElement("div");
-  joke.id = "joke";
-
-  // Create jokeText
-  let jokeText = document.createElement("p");
-  jokeText.id = "jokeText";
-  joke.append(jokeText);
-
-  //   let jokeContainer = document.querySelector("#joke-container");
-  //   jokeContainer.append(joke);
+export function removeJoke() {
+  let joke = document.querySelector("#joke");
+  joke.remove();
 }
