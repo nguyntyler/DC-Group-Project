@@ -1,61 +1,46 @@
-import { addAvatar, removeAvatar } from "./modules/avatar.js";
-import { getJoke, createJokeBox } from "./modules/jokes.js";
-import { pauseshake } from "./modules/animation.js";
+import { addAvatar, removeAvatar, removeInitialAvatar } from "./modules/avatar.js";
+import { getJoke, removeJoke } from "./modules/jokes.js";
+import { downTrash, upTrash, rollLeft, rollDown, avatarPositionReset, buttonDisableColor, buttonEnableColor, thumbsDisableColor, thumbsEnableColor, upLid, downLid } from "./modules/animation.js";
 import { onButton, onThumbs } from "./modules/buttons.js"
-
-
-
+let counter = 0
 
 let button = document.querySelector("#button");
 button.addEventListener("click", () => {
-  setTimeout(onButton, 1000);
-  addAvatar();
-  createJokeBox();
-  setTimeout(getJoke, 50);
+	if (counter <= 0) {
+		removeInitialAvatar();
+		counter += 1;
+	}
+	buttonDisableColor();
+	setTimeout(thumbsEnableColor, 2000)
+	onButton();
+	addAvatar();
+	setTimeout(getJoke, 50);
 });
 
-let removeUp = document.querySelector("#up");
-removeUp.addEventListener("click", () => {
-  setTimeout(onThumbs, 1000);
-  updateEffects();
-  setTimeout(updateEffectsReset, 2000);
-  setTimeout(removeAvatar, 1000);
+let upThumb = document.querySelector("#up");
+upThumb.addEventListener("click", () => {
+	setTimeout(buttonEnableColor, 2000);
+	thumbsDisableColor();
+	onThumbs();
+	rollLeft();
+	setTimeout(avatarPositionReset, 2000);
+	setTimeout(removeAvatar, 1000);
+	setTimeout(removeJoke, 2000);
 });
 
-let removeDown = document.querySelector("#down");
-removeDown.addEventListener("click", () => {
-  setTimeout(onThumbs, 1000);
-  setTimeout(updateEffects2, 500);
-  upTrash();
-  setTimeout(downTrash, 1500)
-  setTimeout(updateEffectsReset, 2000);
-  setTimeout(removeAvatar, 2000);
+let downThumb = document.querySelector("#down");
+downThumb.addEventListener("click", () => {
+	setTimeout(buttonEnableColor, 2500); // From 2000
+	thumbsDisableColor();
+	setTimeout(onThumbs, 500); // Preset Timeout 2000
+	setTimeout(rollDown, 700);
+	upTrash();
+	setTimeout(upLid, 400);
+	setTimeout(downLid, 1600);
+	setTimeout(downTrash, 2500) // From 1500
+	setTimeout(avatarPositionReset, 2000);
+	setTimeout(removeAvatar, 2000);
+	setTimeout(removeJoke, 2500);
 });
-
-// removeUp.addEventListener("click", updateEffects);
-function updateEffects() {
-  document.documentElement.style.setProperty(`--avatarx`, "-150vw");
-  document.documentElement.style.setProperty(`--avatarslide`, "-900deg");
-}
-
-function upTrash() {
-  document.documentElement.style.setProperty(`--trashslide`, "-15vh");
-}
-function downTrash() {
-  document.documentElement.style.setProperty(`--trashslide`, "15vh");
-}
-
-// removeDown.addEventListener("click", updateEffects2);
-function updateEffects2() {
-  //   document.documentElement.style.setProperty(`--transitiontime`, "1s");
-  document.documentElement.style.setProperty(`--avatary`, "200vh");
-  document.documentElement.style.setProperty(`--avatarslide`, "-360deg");
-}
-
-export function updateEffectsReset() {
-  document.documentElement.style.setProperty(`--avatary`, "0px");
-  document.documentElement.style.setProperty(`--avatarx`, "0px");
-  document.documentElement.style.setProperty(`--avatarslide`, "0 deg");
-}
 
 
