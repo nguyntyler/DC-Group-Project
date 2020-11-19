@@ -425,7 +425,7 @@ body {
   display: flex;
   justify-content: center;
   position: fixed;
-  bottom: -35vh;
+  bottom: -45vh;
   transform: translateY(var(--trashSlide));
   transition: 0.8s;
   z-index: 10;
