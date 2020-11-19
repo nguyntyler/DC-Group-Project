@@ -15,7 +15,7 @@ export function avatarPositionReset() {
 
 // ----- Trash Can
 export function upTrash() {
-    document.documentElement.style.setProperty(`--trashSlide`, "-25vh");
+    document.documentElement.style.setProperty(`--trashSlide`, "-40vh");
 }
 export function downTrash() {
     document.documentElement.style.setProperty(`--trashSlide`, "15vh");
