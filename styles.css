@@ -42,49 +42,60 @@ body {
 
 /**
  * ----------------------------------------
- * animation rotate-in-center
+ * animation pulsate-fwd
  * ----------------------------------------
  */
-@-webkit-keyframes rotate-in-center {
+@-webkit-keyframes pulsate-fwd {
   0% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
   100% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
-@keyframes rotate-in-center {
+@keyframes pulsate-fwd {
   0% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
   100% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
+
 /**
  * ----------------------------------------
- * animation rotate-in-center for button
+ * animation pulse for button
  * ----------------------------------------
  */
 
 .button-container {
-    z-index: 1;
-  -webkit-animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: rotate-in-center 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   height: 13vh;
 }
+
+.buttonshake {
+  -webkit-animation: pulsate-fwd 1s ease-in-out infinite both;
+  animation: pulsate-fwd 1s ease-in-out infinite both;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+
 #button {
   font-family: "Anton", sans-serif;
   font-size: 40px;
@@ -99,6 +110,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.8s;
 }
 
 #joke-container {
@@ -249,7 +261,7 @@ body {
 .thumb {
   height: 170px;
   padding: 10px;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .thumbshake {
@@ -408,7 +420,6 @@ body {
   margin: 20px 0px;
 }
 
-
 #trash-icon {
   display: flex;
   justify-content: center;
@@ -436,11 +447,11 @@ body {
   height: auto;
 }
 
-
 #initial-avatar {
   position: absolute;
   top: 17vh;
 }
+
 .disable {
   cursor: not-allowed;
   pointer-events: none;
@@ -453,12 +464,32 @@ body {
 }
 
 #initial-avatar {
-  width: 400px;
+  margin-top: 5vh;
+  width: 350px;
   z-index: 100;
 }
 
+/* #initial-speech-bubble-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+} */
 
-@media screen and (min-width: 800px){
+#initial-speech-bubble {
+  transform: translateY(120px);
+  z-index: 101;
+  width: 80%;
+}
+
+#up {
+  transition: 0.8s;
+}
+
+#down {
+  transition: 0.8s;
+}
+
+@media screen and (min-width: 800px) {
   #whole-screen {
     width: 100vw;
     background-color: rgb(46, 46, 46);
@@ -502,7 +533,7 @@ body {
   }
 
   #avatar-icon {
-    margin:0;
+    margin: 0;
     height: 180px;
     width: 210px;
     padding: 0;
@@ -517,7 +548,7 @@ body {
   }
 
   #trash-icon {
-    bottom: -40vh;
+    bottom: -50vh;
   }
 
   #initial-avatar-container {
@@ -528,7 +559,11 @@ body {
   }
 
   #initial-avatar {
-    width: 450px;
+    transform: translateY(-20px);
     z-index: 100;
+  }
+
+  #initial-speech-bubble {
+    transform: translateY(20px) scale(0.4);
   }
 }
