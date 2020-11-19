@@ -473,6 +473,7 @@ body {
   transform: translateY(120px);
   z-index: 101;
   width: 300px;
+  height: 200px;
 }
 
 #up {
