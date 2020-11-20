@@ -19,8 +19,11 @@ import {
   downLid,
 } from "./modules/animation.js";
 import { onButton, onThumbs } from "./modules/buttons.js";
+
+// Settings below are for joke button
 let counter = 0;
 
+// sets coordinating event actions, color change, timing
 let button = document.querySelector("#button");
 button.addEventListener("click", () => {
   if (counter <= 0) {
@@ -35,6 +38,7 @@ button.addEventListener("click", () => {
   setTimeout(getJoke, 50);
 });
 
+// Settings below are for thumb up button
 let upThumb = document.querySelector("#up");
 upThumb.addEventListener("click", () => {
   setTimeout(buttonEnableColor, 2000);
@@ -46,6 +50,7 @@ upThumb.addEventListener("click", () => {
   setTimeout(removeJoke, 2000);
 });
 
+// Settings below are for thumb down button
 let downThumb = document.querySelector("#down");
 downThumb.addEventListener("click", () => {
   setTimeout(buttonEnableColor, 2500); // From 2000
