@@ -1,3 +1,9 @@
+/**
+ * -----------------------------------------
+* variable settings for custom transitions
+* ------------------------------------------
+*/
+
 :root {
   --avatarx: 0px;
   --avatary: 0px;
@@ -5,6 +11,12 @@
   --trashSlide: 0;
   --lidSlide: 0;
 }
+
+/**
+ * -------------------------------
+* initial mobile view settings
+* --------------------------------
+*/
 
 html,
 body {
@@ -41,10 +53,11 @@ body {
 }
 
 /**
- * ----------------------------------------
- * animation pulsate-fwd
- * ----------------------------------------
- */
+* --------------------------------------------
+* keyframe animation settings for button pulse
+* --------------------------------------------
+*/
+
 @-webkit-keyframes pulsate-fwd {
   0% {
     -webkit-transform: scale(1);
@@ -75,10 +88,10 @@ body {
 }
 
 /**
- * ----------------------------------------
- * animation pulse for button
- * ----------------------------------------
- */
+* ------------------------
+* button postion & design
+* ------------------------
+*/
 
 .button-container {
   z-index: 1;
@@ -100,7 +113,6 @@ body {
   font-family: "Anton", sans-serif;
   font-size: 40px;
   height: 60px;
-  /* background-color: #bbf3c0; */
   background-color: #b2d6ff;
   border-radius: 5px;
   border: 1.5px solid gray;
@@ -113,6 +125,12 @@ body {
   transition: 0.8s;
 }
 
+/**
+ * --------------------------
+* joke box postion & design
+* ---------------------------
+*/
+
 #joke-container {
   position: relative;
   height: 30vh;
@@ -121,7 +139,6 @@ body {
   letter-spacing: 2px;
   line-height: 1.6;
   text-align: center;
-
   overflow-y: scroll;
 }
 
@@ -130,10 +147,11 @@ body {
 }
 
 /**
- * ----------------------------------------
- * animation swing-in-top-fwd
- * ----------------------------------------
+ * --------------------------------------
+ * keyframe animation settings for joke
+ * --------------------------------------
  */
+
 @-webkit-keyframes swing-in-top-fwd {
   0% {
     -webkit-transform: rotateX(-100deg);
@@ -167,6 +185,12 @@ body {
   }
 }
 
+/**
+* ------------------------
+* joke postion & design
+* ------------------------
+*/
+
 #joke {
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -182,9 +206,10 @@ body {
 
 /**
  * ----------------------------------------
- * animation shake-bottom for thumbs >>>>>>>>> need to set timer for initiation of motion after joke
+ * keyframe animation settings for thumbs
  * ----------------------------------------
  */
+
 @-webkit-keyframes shake-bottom {
   0%,
   100% {
@@ -218,6 +243,13 @@ body {
     transform: rotate(2deg);
   }
 }
+
+/**
+ * ----------------------------------------
+ * keyframe animation settings for thumbs
+ * ----------------------------------------
+ */
+
 @keyframes shake-bottom {
   0%,
   100% {
@@ -252,6 +284,12 @@ body {
   }
 }
 
+/**
+ * ------------------------
+ * thumb postion & design
+ * ------------------------
+ */
+
 #thumbs {
   height: 34vh;
   display: flex;
@@ -275,10 +313,11 @@ body {
 }
 
 /**
- * ----------------------------------------
- * animation roll-in-right
- * ----------------------------------------
+ * ---------------------------------------------------
+ * keyframe animation settings for avatar icon roll-in
+ * ---------------------------------------------------
  */
+
 @-webkit-keyframes roll-in-right {
   0% {
     -webkit-transform: translateX(800px) rotate(540deg);
@@ -305,10 +344,11 @@ body {
 }
 
 /**
- * ----------------------------------------
- * animation roll-out-bottom for avatar icon
- * ----------------------------------------
+ * -----------------------------------------------------
+ * keyframe animation settings for avatar icon roll-down
+ * -----------------------------------------------------
  */
+
 @-webkit-keyframes roll-out-bottom {
   0% {
     -webkit-transform: translateY(0) rotate(0deg);
@@ -334,6 +374,12 @@ body {
   }
 }
 
+/**
+* ------------------------
+* avatar postion & design
+* ------------------------
+*/
+
 #avatar-icon {
   display: flex;
   justify-content: center;
@@ -357,10 +403,11 @@ body {
 }
 
 /**
- * ----------------------------------------
- * animation swing-in-top-bck
- * ----------------------------------------
+ * ---------------------------------------------
+ * keyframe animation settings for new joke
+ * ---------------------------------------------
  */
+
 @-webkit-keyframes swing-in-top-bck {
   0% {
     -webkit-transform: rotateX(70deg);
@@ -394,6 +441,12 @@ body {
   }
 }
 
+/**
+* ------------------------
+* new joke postion & design
+* ------------------------
+*/
+
 #newJokeDiv {
   -webkit-animation: swing-in-top-bck 0.6s
     cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
@@ -401,10 +454,22 @@ body {
   transition: 3s;
 }
 
+/**
+* ------------------------------------------------
+* preset webkit animation for avatar-icon roll-out
+* ------------------------------------------------
+*/
+
 .rollout {
   -webkit-animation: roll-out-bottom 0.6s ease-in both;
   animation: roll-out-bottom 0.6s ease-in both;
 }
+
+/**
+* ---------------------------------
+* generated avatar postion & design
+* ---------------------------------
+*/
 
 #sprite {
   overflow: hidden;
@@ -413,6 +478,12 @@ body {
   padding-top: 5px;
 }
 
+/**
+* ------------------------
+* avatar postion & design
+* ------------------------
+*/
+
 .avatar-container {
   display: flex;
   justify-content: center;
@@ -420,6 +491,12 @@ body {
   height: 140px;
   margin: 20px 0px;
 }
+
+/**
+* ---------------------------
+* trash can postion & design
+* ---------------------------
+*/
 
 #trash-icon {
   display: flex;
@@ -430,6 +507,7 @@ body {
   transition: 0.8s;
   z-index: 10;
 }
+
 .trashcan {
   position: relative;
   width: 240px;
@@ -447,6 +525,12 @@ body {
   width: 100%;
   height: auto;
 }
+
+/**
+* ------------------------
+* opening screen avatar postion & design
+* ------------------------
+*/
 
 #initial-avatar {
   position: absolute;
@@ -477,6 +561,12 @@ body {
   height: 150px;
 }
 
+/**
+* ------------------------
+* thumb color transitions
+* ------------------------
+*/
+
 #up {
   transition: 0.8s;
 }
@@ -484,6 +574,12 @@ body {
 #down {
   transition: 0.8s;
 }
+
+/**
+* ------------------------
+* desktop view settings
+* ------------------------
+*/
 
 @media screen and (min-width: 800px) {
   #whole-screen {
@@ -493,6 +589,7 @@ body {
     display: flex;
     justify-content: center;
   }
+
   .main-container {
     width: 800px;
     overflow: hidden;
@@ -561,6 +658,5 @@ body {
 
   #initial-speech-bubble {
     transform: translateY(15vh) scale(1.2);
-    /* width: 600px; */
   }
 }

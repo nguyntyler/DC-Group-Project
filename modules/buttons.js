@@ -1,3 +1,5 @@
+// sets toggle actions for thumb up and thumb down
+
 function toggleThumb() {
   let thumbUp = document.querySelector("#up");
   let thumbDown = document.querySelector("#down");
@@ -5,17 +7,20 @@ function toggleThumb() {
   thumbDown.classList.toggle("disable");
 }
 
+// sets disable action for joke button
+
 function toggleButton() {
   let button = document.querySelector("#button");
   button.classList.toggle("disable");
 }
 
+// sets disable/enable timing for joke button to prompt thumbshake
+
 export let onButton = () => {
-  // Button Disable
   toggleButton();
-  // Thumb Enable
+
   setTimeout(toggleThumb, 2000);
-  // Add thumb shake enable.
+
   let thumbUp = document.querySelector("#up");
   let thumbDown = document.querySelector("#down");
   thumbUp.classList.toggle("thumbshake");
@@ -25,12 +30,12 @@ export let onButton = () => {
   button.classList.toggle("buttonshake");
 };
 
+// sets enable/disable timing for thumbshake action
+
 export let onThumbs = () => {
-  // Button Reenable
   setTimeout(toggleButton, 2000);
-  // Thumb Disable
   toggleThumb();
-  // Add thumb shake disable.
+
   let thumbUp = document.querySelector("#up");
   let thumbDown = document.querySelector("#down");
   thumbUp.classList.toggle("thumbshake");
